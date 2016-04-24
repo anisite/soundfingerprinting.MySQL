@@ -19,3 +19,4 @@ src/TestResults/
 packages*/
 *.exe
 !NuGet.exe
+*.config
