@@ -14,7 +14,7 @@
             kernel.Bind<IModelBinderFactory>().To<ModelBinderFactory>()
                                               .WhenInjectedInto<CachedModelBinderFactory>();
 
-            kernel.Bind<IDatabaseProviderFactory>().To<MsSqlDatabaseProviderFactory>();
+            kernel.Bind<IDatabaseProviderFactory>().To<MySqlDatabaseProviderFactory>();
             kernel.Bind<IConnectionStringFactory>().To<DefaultConnectionStringFactory>().InSingletonScope();
         }
     }

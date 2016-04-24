@@ -1,5 +1,6 @@
 namespace SoundFingerprinting.SQL.Conditions
 {
+    using MySql.Data.MySqlClient;
     using System;
     using System.Data;
     using System.Linq.Expressions;

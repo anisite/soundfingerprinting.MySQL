@@ -2,25 +2,24 @@ namespace SoundFingerprinting.SQL.Connection
 {
     using System.Data;
     using System.Data.Common;
-    using System.Data.SqlClient;
 
     using SoundFingerprinting.Infrastructure;
-
-    internal class MsSqlDatabaseProviderFactory : IDatabaseProviderFactory
+    using MySql.Data.MySqlClient;
+    internal class MySqlDatabaseProviderFactory : IDatabaseProviderFactory
     {
         private readonly IConnectionStringFactory connectionStringFactory;
 
         private readonly DbProviderFactory databaseProvider;
 
-        public MsSqlDatabaseProviderFactory()
+        public MySqlDatabaseProviderFactory()
             : this(DependencyResolver.Current.Get<IConnectionStringFactory>())
         {
         }
 
-        public MsSqlDatabaseProviderFactory(IConnectionStringFactory connectionStringFactory)
+        public MySqlDatabaseProviderFactory(IConnectionStringFactory connectionStringFactory)
         {
             this.connectionStringFactory = connectionStringFactory;
-            databaseProvider = SqlClientFactory.Instance;
+            databaseProvider = MySqlClientFactory.Instance;
         }
 
         public IDbConnection CreateConnection()

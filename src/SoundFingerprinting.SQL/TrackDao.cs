@@ -9,7 +9,7 @@ namespace SoundFingerprinting.SQL
     using SoundFingerprinting.Infrastructure;
     using SoundFingerprinting.SQL.Connection;
     using SoundFingerprinting.SQL.ORM;
-
+    using MySql.Data.MySqlClient;
     internal class TrackDao : AbstractDao, ITrackDao
     {
         private const string SpInsertTrack = "sp_InsertTrack";
@@ -36,11 +36,13 @@ namespace SoundFingerprinting.SQL
 
         public IModelReference InsertTrack(TrackData track)
         {
-            int id = PrepareStoredProcedure(SpInsertTrack)
+            ulong id = PrepareStoredProcedure(SpInsertTrack)
                             .WithParametersFromModel(track)
                             .Execute()
-                            .AsScalar<int>();
-            return track.TrackReference = new ModelReference<int>(id);
+                            .AsScalar<ulong>();
+
+
+            return track.TrackReference = new ModelReference<int>(Convert.ToInt32(id));
         }
 
         public IList<TrackData> ReadAll()
