@@ -1,3 +1,4 @@
+src/SoundFingerprinting.MySQL.Tests/App.config
 release/
 debug/
 msbuild.log
