@@ -4,12 +4,12 @@ _soundfingerprinting.sql_ persistent storage implementation which allows storing
 The MSSQL database initialization script can be find [here](src/Scripts/MySQL_script.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
 ```xml
 <connectionStrings>
-    <add name="FingerprintConnectionString" connectionString="server=mySqlServer;port=3306;database=fingerprintsdb;uid=root;password=******" providerName="System.Data.SqlClient"/>
+    <add name="FingerprintConnectionString" connectionString="server=mySqlServer;port=3306;database=fingerprintsdb;uid=root;password=******" providerName="MySql.Data.MySqlClient"/>
 </connectionStrings>
 ```
-Use <code>SqlModelService</code> class when fingerprinting and querying
+Use <code>MySqlModelService</code> class when fingerprinting and querying
 ```csharp
-private readonly IModelService modelService = new SqlModelService(); // SQL back end
+private readonly IModelService modelService = new MySqlModelService(); // SQL back end
 private readonly IAudioService audioService = new NAudioService(); // use NAudio audio processing library
 private readonly IFingerprintCommandBuilder fingerprintCommandBuilder = new FingerprintCommandBuilder();
 
@@ -33,8 +33,8 @@ public void StoreAudioFileFingerprintsInStorageForLaterRetrieval(string pathToAu
 }
 ```
 ## Binaries
-    git clone git@github.com:AddictedCS/soundfingerprinting.sql.git
-In order to build latest version of the <code>SoundFingerprinting.SQL</code> assembly run the following command from repository root
+    git clone git@github.com:anisite/soundfingerprinting.MySQL.git
+In order to build latest version of the <code>SoundFingerprinting.MySQL</code> assembly run the following command from repository root
     .\build.cmd
 ## Get it on NuGet
-    Install-Package SoundFingerprinting.SQL
+    Install-Package SoundFingerprinting.MySQL
