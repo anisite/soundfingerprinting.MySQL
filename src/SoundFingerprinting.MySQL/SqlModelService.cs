@@ -2,15 +2,15 @@
 {
     using SoundFingerprinting.DAO;
 
-    public class SqlModelService : ModelService
+    public class MySqlModelService : ModelService
     {
-        public SqlModelService()
+        public MySqlModelService()
             : base(new TrackDao(), new HashBinDao(), new SubFingerprintDao(), new FingerprintDao(), new SpectralImageDao())
         {
             // no op
         }
 
-        protected SqlModelService(
+        protected MySqlModelService(
             ITrackDao trackDao,
             IHashBinDao hashBinDao,
             ISubFingerprintDao subFingerprintDao,
