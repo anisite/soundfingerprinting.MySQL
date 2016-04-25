@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.MySQL", "SoundFingerprinting.SQL\SoundFingerprinting.MySQL.csproj", "{6A632721-03E5-46C1-8457-66333F7271AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.MySQL", "SoundFingerprinting.MySQL\SoundFingerprinting.MySQL.csproj", "{6A632721-03E5-46C1-8457-66333F7271AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{117D487C-9775-4689-B639-5B80E73DA38A}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{117D48
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.SQL.Tests", "SoundFingerprinting.SQL.Tests\SoundFingerprinting.SQL.Tests.csproj", "{AE93CADF-1D48-4293-BE07-5EAFB3B4FD77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundFingerprinting.MySQL.Tests", "SoundFingerprinting.MySQL.Tests\SoundFingerprinting.MySQL.Tests.csproj", "{AE93CADF-1D48-4293-BE07-5EAFB3B4FD77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
