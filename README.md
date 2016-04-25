@@ -1,7 +1,7 @@
 ## Sound Fingerprinting MySQL
 _soundfingerprinting.sql_ persistent storage implementation which allows storing [soundfingerprinting](https://github.com/AddictedCS/soundfingerprinting) algorithm's data objects in _MySQL_ database. 
 ## Usage
-The MSSQL database initialization script can be find [here](src/Scripts/MySQL_script.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
+The MSySQL database initialization script can be find [here](src/Scripts/MySQL_script.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
 ```xml
 <connectionStrings>
     <add name="FingerprintConnectionString" connectionString="server=mySqlServer;port=3306;database=fingerprintsdb;uid=root;password=******" providerName="MySql.Data.MySqlClient"/>
