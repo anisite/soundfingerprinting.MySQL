@@ -9,7 +9,8 @@ namespace SoundFingerprinting.SQL
     using SoundFingerprinting.Infrastructure;
     using SoundFingerprinting.SQL.Connection;
     using SoundFingerprinting.SQL.ORM;
-
+    using MySql.Data.MySqlClient;
+    using System;
     internal class FingerprintDao : AbstractDao, IFingerprintDao
     {
         private const string SpInsertFingerprint = "sp_InsertFingerprint";
@@ -33,11 +34,11 @@ namespace SoundFingerprinting.SQL
             byte[] byteSignature = GetByteArrayFromBool(fingerprint.Signature);
             var fingerprintId = PrepareStoredProcedure(SpInsertFingerprint)
                                 .WithParameter("Signature", byteSignature)
-                                .WithParameter("TrackId", fingerprint.TrackReference.Id, DbType.Int32)
+                                .WithParameter("TrackId", fingerprint.TrackReference.Id,  DbType.Int32)
                                 .Execute()
-                                .AsScalar<int>();
+                                .AsScalar<ulong>();
 
-            return fingerprint.FingerprintReference = new ModelReference<int>(fingerprintId);
+            return fingerprint.FingerprintReference = new ModelReference<int>(Convert.ToInt32(fingerprintId));
         }
 
         public IList<FingerprintData> ReadFingerprintsByTrackReference(IModelReference trackReference)

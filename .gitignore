@@ -1,3 +1,4 @@
+src/SoundFingerprinting.SQL.Tests/App.config
 release/
 debug/
 msbuild.log
@@ -18,3 +19,4 @@ src/TestResults/
 packages*/
 *.exe
 !NuGet.exe
+*.config

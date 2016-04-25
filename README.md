@@ -1,7 +1,7 @@
-## Sound Fingerprinting MSSQL
-_soundfingerprinting.sql_ persistent storage implementation which allows storing [soundfingerprinting](https://github.com/AddictedCS/soundfingerprinting) algorithm's data objects in _MSSQL_ database. 
+## Sound Fingerprinting MySQL
+_soundfingerprinting.sql_ persistent storage implementation which allows storing [soundfingerprinting](https://github.com/AddictedCS/soundfingerprinting) algorithm's data objects in _MySQL_ database. 
 ## Usage
-The MSSQL database initialization script can be find [here](src/Scripts/DBScript.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
+The MSSQL database initialization script can be find [here](src/Scripts/MySQL_script.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
 ```xml
 <connectionStrings>
     <add name="FingerprintConnectionString" connectionString="Data Source=(local);Initial Catalog=FingerprintsDb;Integrated Security=True; Connection Timeout=15;" providerName="System.Data.SqlClient"/>
@@ -37,4 +37,4 @@ public void StoreAudioFileFingerprintsInStorageForLaterRetrieval(string pathToAu
 In order to build latest version of the <code>SoundFingerprinting.SQL</code> assembly run the following command from repository root
     .\build.cmd
 ## Get it on NuGet
-    Install-Package SoundFingerprinting.SQL -Pre
+    Install-Package SoundFingerprinting.SQL

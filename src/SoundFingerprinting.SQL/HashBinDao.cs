@@ -10,7 +10,7 @@ namespace SoundFingerprinting.SQL
     using SoundFingerprinting.Infrastructure;
     using SoundFingerprinting.SQL.Connection;
     using SoundFingerprinting.SQL.ORM;
-
+    using MySql.Data.MySqlClient;
     internal class HashBinDao : AbstractDao, IHashBinDao
     {
         private const string SpReadFingerprintsByHashBinHashTableAndThreshold = "sp_ReadFingerprintsByHashBinHashTableAndThreshold";

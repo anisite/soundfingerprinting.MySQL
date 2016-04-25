@@ -7,7 +7,7 @@ namespace SoundFingerprinting.SQL.Conditions
     using System.Text.RegularExpressions;
 
     using SoundFingerprinting.SQL.ORM;
-
+    using MySql.Data.MySqlClient;
     internal class AsValueEnum<TModel> : ICondition<TModel>
     {
         private readonly Expression<Func<TModel, object>> expression;

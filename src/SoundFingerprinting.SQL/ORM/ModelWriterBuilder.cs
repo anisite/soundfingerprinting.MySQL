@@ -8,7 +8,7 @@ namespace SoundFingerprinting.SQL.ORM
     using System.Reflection;
 
     using SoundFingerprinting.SQL.Conditions;
-
+    using MySql.Data.MySqlClient;
     internal class ModelWriterBuilder<TModel>
     {
         private readonly ParameterExpression parameterStoredProcedure;

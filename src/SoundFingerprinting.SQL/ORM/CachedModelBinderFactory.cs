@@ -4,7 +4,7 @@ namespace SoundFingerprinting.SQL.ORM
     using System.Data;
 
     using SoundFingerprinting.SQL.Conditions;
-
+    using MySql.Data.MySqlClient;
     internal class CachedModelBinderFactory : IModelBinderFactory
     {
         private readonly IModelBinderFactory modelBinderFactory;

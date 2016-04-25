@@ -4,7 +4,7 @@ namespace SoundFingerprinting.SQL.ORM
     using System.Data;
 
     using SoundFingerprinting.SQL.Conditions;
-
+    using MySql.Data.MySqlClient;
     internal interface IParameterBinder
     {
         IParameterBinder WithParameter(string name, string value);

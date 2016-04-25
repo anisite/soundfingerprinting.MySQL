@@ -1,10 +1,10 @@
 namespace SoundFingerprinting.SQL.ORM
 {
     using System;
-    using System.Data;
 
     using SoundFingerprinting.SQL.Conditions;
-
+    using MySql.Data.MySqlClient;
+    using System.Data;
     internal class ParameterBinder : IParameterBinder
     {
         private readonly IDbConnection connection;
@@ -76,7 +76,7 @@ namespace SoundFingerprinting.SQL.ORM
                 parameter.ParameterName = name;
                 parameter.Value = value ?? DBNull.Value;
                 parameter.DbType = type;
-
+            
                 command.Parameters.Add(parameter);
             }
             catch (Exception)

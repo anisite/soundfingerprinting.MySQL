@@ -1,13 +1,12 @@
 ﻿namespace SoundFingerprinting.SQL
 {
     using System.Data;
-
     using SoundFingerprinting.DAO;
     using SoundFingerprinting.DAO.Data;
     using SoundFingerprinting.Infrastructure;
     using SoundFingerprinting.SQL.Connection;
     using SoundFingerprinting.SQL.ORM;
-
+    using System;
     internal class SubFingerprintDao : AbstractDao, ISubFingerprintDao
     {
         private const string SpInsertSubFingerprint = "sp_InsertSubFingerprint";
@@ -32,22 +31,22 @@
                         .Execute()
                         .AsComplexModel<SubFingerprintData>((item, reader) =>
                             {
-                                item.SubFingerprintReference = new ModelReference<long>(reader.GetInt64("Id"));
+                                item.SubFingerprintReference = new ModelReference<int>(reader.GetInt32("Id"));
                                 item.TrackReference = new ModelReference<int>(reader.GetInt32("TrackId"));
                             });
         }
 
         public IModelReference InsertSubFingerprint(byte[] signature, int sequenceNumber, double sequenceAt, IModelReference trackReference)
         {
-            long subFingerprintId = PrepareStoredProcedure(SpInsertSubFingerprint)
+            ulong subFingerprintId = PrepareStoredProcedure(SpInsertSubFingerprint)
                                 .WithParameter("Signature", signature)
                                 .WithParameter("TrackId", trackReference.Id, DbType.Int32)
                                 .WithParameter("SequenceNumber", sequenceNumber, DbType.Int32)
                                 .WithParameter("SequenceAt", sequenceAt, DbType.Double)
                                 .Execute()
-                                .AsScalar<long>();
+                                .AsScalar<ulong>();
 
-            return new ModelReference<long>(subFingerprintId);
+            return new ModelReference<int>(Convert.ToInt32(subFingerprintId));
         }
     }
 }
