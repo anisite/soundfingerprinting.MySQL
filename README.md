@@ -36,5 +36,5 @@ public void StoreAudioFileFingerprintsInStorageForLaterRetrieval(string pathToAu
     git clone git@github.com:anisite/soundfingerprinting.MySQL.git
 In order to build latest version of the <code>SoundFingerprinting.MySQL</code> assembly run the following command from repository root
     .\build.cmd
-## Get it on NuGet
+## Get it on NuGet (not yet ready)
     Install-Package SoundFingerprinting.MySQL
