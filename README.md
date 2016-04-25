@@ -4,7 +4,7 @@ _soundfingerprinting.sql_ persistent storage implementation which allows storing
 The MSSQL database initialization script can be find [here](src/Scripts/MySQL_script.sql). Do not forget to add connection string <code>FingerprintConnectionString</code> in your app.config file.
 ```xml
 <connectionStrings>
-    <add name="FingerprintConnectionString" connectionString="Data Source=(local);Initial Catalog=FingerprintsDb;Integrated Security=True; Connection Timeout=15;" providerName="System.Data.SqlClient"/>
+    <add name="FingerprintConnectionString" connectionString="server=mySqlServer;port=3306;database=fingerprintsdb;uid=root;password=******" providerName="System.Data.SqlClient"/>
 </connectionStrings>
 ```
 Use <code>SqlModelService</code> class when fingerprinting and querying
